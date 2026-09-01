@@ -1,0 +1,49 @@
+<ion-content class="ion-padding">
+
+  <div class="login-wrap">
+
+    <div class="login-marca">
+      <div class="login-logo">MF</div>
+      <h1>Mural Firebase</h1>
+      <p>Entre para publicar recados</p>
+    </div>
+
+    <ion-card>
+      <ion-card-content>
+
+        <ion-item lines="none">
+          <ion-label position="stacked">E-mail</ion-label>
+          <input
+            type="email"
+            name="email"
+            [(ngModel)]="email"
+            placeholder="ex: aluno@ifsc.edu.br">
+        </ion-item>
+
+        <ion-item lines="none">
+          <ion-label position="stacked">Senha</ion-label>
+          <input
+            type="password"
+            name="senha"
+            [(ngModel)]="senha"
+            placeholder="Digite sua senha">
+        </ion-item>
+
+        <p class="msg-erro" *ngIf="mensagemErro">
+          {{ mensagemErro }}
+        </p>
+
+        <ion-button expand="block" (click)="login()">
+          Entrar
+        </ion-button>
+
+        <ion-button expand="block" fill="clear" routerLink="/cadastro">
+          Criar uma conta
+        </ion-button>
+
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+
+</ion-content>
