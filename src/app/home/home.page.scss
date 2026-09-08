@@ -1,27 +1,38 @@
-#container {
+.saudacao {
+  color: #64748b;
+  font-size: 0.92rem;
+  margin: 0 0 12px;
+}
+
+.vazio {
   text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  color: #64748b;
+  margin: 24px 0;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+.data {
+  color: #64748b;
+  font-size: 0.85rem;
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+ion-card {
+  border-radius: 12px;
 }
 
-#container a {
-  text-decoration: none;
+ion-item {
+  --background: #f8fafc;
+  --border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.msg-erro {
+  background: #fff1f2;
+  color: #9f1239;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 0.9rem;
+}
+
+ion-button {
+  margin-top: 8px;
 }

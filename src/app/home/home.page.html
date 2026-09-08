@@ -1,20 +1,56 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title>Mural</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="sair()">Sair</ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <p class="saudacao" *ngIf="auth.usuario">
+    Conectado como <strong>{{ auth.usuario.email }}</strong>
+  </p>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Novo recado</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item lines="none">
+        <ion-label position="stacked">Texto</ion-label>
+        <input
+          name="texto"
+          [(ngModel)]="textoNovo"
+          placeholder="Ex: Prova de PDM na sexta">
+      </ion-item>
+
+      <p class="msg-erro" *ngIf="mensagemErro">
+        {{ mensagemErro }}
+      </p>
+
+      <ion-button expand="block" (click)="publicar()">
+        Publicar
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <p class="vazio" *ngIf="recados.length === 0">
+    Nenhum recado ainda. Seja o primeiro a publicar.
+  </p>
+
+  <ion-card *ngFor="let recado of recados">
+    <ion-card-header>
+      <ion-card-title>{{ recado.texto }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{ recado.autor }}</p>
+      <p class="data">{{ recado.criadoEm | date:'dd/MM/yyyy HH:mm' }}</p>
+      <ion-button fill="outline" color="danger" size="small" (click)="excluir(recado.id)">
+        Excluir
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>
