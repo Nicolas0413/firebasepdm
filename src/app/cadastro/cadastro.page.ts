@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { CommonModule} from '@angular/common';
+import { FormsModule, NgForm } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { AuthService } from '../services/authService';
 import { IonButton, IonCard, IonCardContent, IonContent, IonItem, IonLabel } from '@ionic/angular';
@@ -10,7 +10,7 @@ import { IonButton, IonCard, IonCardContent, IonContent, IonItem, IonLabel } fro
   templateUrl: './cadastro.page.html',
   styleUrls: ['./cadastro.page.scss'],
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterModule, IonContent, IonCard, IonCardContent, IonItem, IonLabel, IonButton],
+  imports: [IonContent, IonCard, IonItem, IonButton, CommonModule, FormsModule, RouterModule, IonLabel, IonCardContent],
 })
 export class CadastroPage {
 

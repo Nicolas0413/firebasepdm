@@ -15,21 +15,21 @@
           <ion-label position="stacked">E-mail</ion-label>
           <input
             type="email"
-            name="email"
             [(ngModel)]="email"
+            name="email"
             placeholder="ex: aluno@ifsc.edu.br">
         </ion-item>
 
         <ion-item lines="none">
           <ion-label position="stacked">Senha</ion-label>
           <input
-          name="senha"
             type="password"
             [(ngModel)]="senha"
+            name="senha"
             placeholder="Mínimo de 6 caracteres">
         </ion-item>
 
-        <p class="msg-erro" *ngIf="mensagemErro">
+        <p class="msg-erro">
           {{ mensagemErro }}
         </p>
 

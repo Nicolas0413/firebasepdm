@@ -36,3 +36,17 @@ ion-item {
 ion-button {
   margin-top: 8px;
 }
+.perfil {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.perfil img {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+}

@@ -15,8 +15,8 @@
           <ion-label position="stacked">E-mail</ion-label>
           <input
             type="email"
-            name="email"
             [(ngModel)]="email"
+            name="email"
             placeholder="ex: aluno@ifsc.edu.br">
         </ion-item>
 
@@ -35,6 +35,16 @@
 
         <ion-button expand="block" (click)="login()">
           Entrar
+        </ion-button>
+
+        <!-- separador visual entre os dois jeitos de entrar -->
+        <div class="divisor"><span>ou</span></div>
+
+        <ion-button
+          expand="block"
+          fill="outline"
+          (click)="loginGoogle()">
+          Entrar com Google
         </ion-button>
 
         <ion-button expand="block" fill="clear" routerLink="/cadastro">

@@ -2,17 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { IonContent, IonLabel, IonButton, IonButtons, IonTitle, IonCard, IonToolbar, IonCardContent, IonCardTitle, IonCardHeader, IonItem, IonHeader} from '@ionic/angular';
 import { Recado } from '../models/recado';
 import { AuthService } from '../services/authService';
 import { RecadoService } from '../services/recadoService';
-import { IonButton, IonButtons, IonCard, IonCardHeader, IonContent, IonTitle, IonToolbar, IonCardTitle, IonCardContent, IonItem, IonLabel, IonHeader } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
   standalone: true,
-  imports: [CommonModule, FormsModule, IonToolbar, IonTitle, IonButton, IonButtons, IonContent, IonCard, IonCardHeader, IonCardContent, IonItem, IonLabel, IonCardTitle, IonHeader   ],
+  imports: [IonButton, IonHeader, IonLabel, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonItem,  IonToolbar, CommonModule, FormsModule, IonContent, IonButton, IonButtons, IonTitle],
 })
 export class HomePage implements OnInit {
 
@@ -62,5 +62,6 @@ export class HomePage implements OnInit {
     await this.auth.sair();
     this.router.navigate(['/login']);
   }
+
 
 }
